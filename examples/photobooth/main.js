@@ -24,16 +24,15 @@ const os = require('os');
 (async () => {
   let app;
   try {
-    app = await carlo.launch(
-      {
-        bgcolor: '#e6e8ec',
-        width: 800,
-        height: 648 + 24,
-        icon: path.join(__dirname, '/app_icon.png'),
-        channel: ['canary', 'stable'],
-        localDataDir: path.join(os.homedir(), '.carlophotobooth'),
-      });
-  } catch(e) {
+    app = await carlo.launch({
+      bgcolor: '#e6e8ec',
+      width: 800,
+      height: 648 + 24,
+      icon: path.join(__dirname, '/app_icon.png'),
+      channel: ['canary', 'stable'],
+      localDataDir: path.join(os.homedir(), '.carlophotobooth'),
+    });
+  } catch (e) {
     // New window is opened in the running instance.
     console.log('Reusing the running instance');
     return;
@@ -47,9 +46,8 @@ const os = require('os');
 })();
 
 function saveImage(base64) {
-  var buffer = Buffer.from(base64, 'base64')
-  if (!fs.existsSync('pictures'))
-    fs.mkdirSync('pictures');
-  const fileName = path.join('pictures', new Date().toISOString().replace(/:/g,'-') + '.jpeg');
+  var buffer = Buffer.from(base64, 'base64');
+  if (!fs.existsSync('pictures')) fs.mkdirSync('pictures');
+  const fileName = path.join('pictures', new Date().toISOString().replace(/:/g, '-') + '.jpeg');
   fs.writeFileSync(fileName, buffer);
 }
