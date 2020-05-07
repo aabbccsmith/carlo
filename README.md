@@ -1,6 +1,6 @@
 # Carlo - headful Node app framework
 
-### ❗Carlo is [no longer maintained](https://github.com/GoogleChromeLabs/carlo/issues/163#issuecomment-592238093). 
+### ❗The unmaintained version by Google labs has been, deprecated. [See here](https://github.com/GoogleChromeLabs/carlo/issues/163#issuecomment-592238093). This repo is my attempt at saving an awesome framework!
 
 -----------------------
 
